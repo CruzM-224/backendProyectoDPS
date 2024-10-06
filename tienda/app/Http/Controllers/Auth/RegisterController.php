@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'id_rol' => 2,
             'telefono' => $data['telefono'],
             'direccion' => $data['direccion'],
+            'usuario' => $data['usuario'],
    
             'email' => $data['email'],
             'estado' => "Activo",

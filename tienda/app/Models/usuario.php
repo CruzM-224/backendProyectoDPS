@@ -19,6 +19,7 @@ class usuario extends Authenticatable
         'dui',
         
         'telefono',
+        'usuario',
         
         'id_rol',
         'email',

@@ -58,7 +58,7 @@
                                         <th>Apellidos</th>
                                         <th>Monto</th>
                                         <th>No. Venta</th>
-                                        <th>Tipo pago</th>
+                                      
                                         <th>Fecha</th>
                                         <th>Estado</th>
                                         <th>Opciones</th>
@@ -75,7 +75,7 @@
                                             <td>{{ $venta->cliente->apellidos }}</td>
                                             <td>$ {{ $venta->monto }}</td>
                                             <td>{{ $venta->id }}</td>
-                                            <td>{{ $venta->metodoPago->metodo }}</td>
+                                           
                                             <td> {{ $venta->fecha }}</td>
                                             <td>{{ $venta->estado->estado }}</td>
                                             <td>
@@ -86,11 +86,7 @@
                                                 <a class="btn btn-sm btn-success"
                                                     href="{{ route('ventas.edit', $venta->id) }}"><i
                                                         class="fa fa-fw fa-edit"></i></a>
-                                                @if ($venta->comprobante != null)
-                                                <a class="btn btn-sm btn-danger"
-                                                    href="{{ route('ventas.comprobante', $venta->id) }}">PDF</a>
-                                                    
-                                                @endif
+                                               
 
 
                                             </td>

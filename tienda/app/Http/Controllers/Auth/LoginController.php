@@ -50,7 +50,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        carrito::where('id_cliente', auth()->user()->id)->delete();
+       
         
         $this->guard()->logout();
 

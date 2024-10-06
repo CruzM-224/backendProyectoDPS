@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Http;
 */
 
 Auth::routes();
-Route::view('/', 'Inicio')->middleware('auth')->middleware('rol');
+Route::view('/', 'Inicio')->middleware('auth');
 
 Route::resource('usuarios', usuariosController::class)->middleware('auth')->middleware('rol');
 Route::resource('categorias', categoriasController::class)->middleware('auth')->middleware('rol');
@@ -38,7 +38,7 @@ Route::resource('productos', productosController::class)->middleware('auth')->mi
 Route::resource('roles', rolesController::class)->middleware('auth')->middleware('rol');
 Route::resource('ventas', ventasController::class)->middleware('auth')->middleware('rol');
 Route::resource('compra-estados', compraEstadosController::class)->middleware('auth')->middleware('rol');
-
+Route::get('ventas/{id}/detalles', [ventasController::class, 'detalles'])->name('ventas.detalles')->middleware('auth')->middleware('rol');
 
 
 

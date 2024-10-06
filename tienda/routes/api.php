@@ -4,6 +4,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\categoriasController;
 use App\Http\Controllers\productosController;
 use App\Http\Controllers\usuariosController;
+use App\Http\Controllers\ventasController;
 use App\Http\Controllers\wompiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,5 @@ Route::get('productos/descuento', [productosController::class, 'showOfertas']);
 
 
 Route::get('productos/{id}/show', [productosController::class, 'showProductoFront']);
+
+Route::post('ventas/registrar', [ventasController::class, 'ingresarVenta']);

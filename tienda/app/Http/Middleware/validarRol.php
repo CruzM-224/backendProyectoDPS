@@ -16,7 +16,7 @@ class validarRol
     public function handle(Request $request, Closure $next): Response
     {
         if(auth()->user()->id_rol != 1){
-            return redirect(route('tienda.index'));
+            return redirect(route('login'));
         }
         return $next($request);
     }
