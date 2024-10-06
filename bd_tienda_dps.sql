@@ -131,6 +131,12 @@ INSERT INTO `productos` (`id`, `producto`, `descripcion`, `codigo`, `existencias
 (48, 'Samsung', 'Samsung', '00005', 10, 'Samsung', 'Samsung', 'https://store.sony.com.sg/cdn/shop/files/DualSense_WirelessController_MetallicGray_1200x.png?v=1706234652', 4, 'Activo', 399.00, 20, '2024-10-05 04:34:32', NULL),
 (49, 'Teclado', 'Teclado', '00001', 10, 'Teclado', 'Razer', 'https://store.sony.com.sg/cdn/shop/files/DualSense_WirelessController_MetallicGray_1200x.png?v=1706234652', 5, 'Activo', 109.99, 10, '2024-10-05 04:34:32', NULL);
 
+--
+-- Cambios para la tabla `productos`
+--
+UPDATE `productos` SET `producto` = 'Control de Nintendo Switch', `descripcion` = 'Control inalambrico de Nintendo Switch', `modelo` = 'Hori Pad', `marca` = 'Hori', `imagen` = 'https://i5.walmartimages.com/seo/Hori-Nintendo-Switch-Sonic-the-Hedgehog-Edition-Wireless-HORI-PAD-Video-Game-Controller_f025f7dc-7e72-4414-8cb7-01be374648f8.f39ee5b86914992719c3f164ac456f9a.png', `precio` = '128.00', `descuento` = '0' WHERE `productos`.`id` = 32; UPDATE `productos` SET `producto` = 'Control de Xbox', `descripcion` = 'Control inalambrico de Xbox', `existencias` = '14', `modelo` = 'Xbox controller', `marca` = 'Xbox', `imagen` = 'https://blog.desdelinux.net/wp-content/uploads/2020/01/xbox-one-controller.png', `descuento` = '0' WHERE `productos`.`id` = 38; UPDATE `productos` SET `producto` = 'Xbox Serie S', `descripcion` = 'Consola de videojuegos Xbox Serie S', `modelo` = 'Xbox Serie S', `marca` = 'Xbox', `imagen` = 'https://cms-assets.xboxservices.com/assets/98/7b/987b8ad4-0f9e-4f65-bef7-f93ee9d1a689.png?n=389964_Hero-Gallery-0_A4_857x676.png', `precio` = '376.00' WHERE `productos`.`id` = 44;
+
+
 -- --------------------------------------------------------
 
 --
