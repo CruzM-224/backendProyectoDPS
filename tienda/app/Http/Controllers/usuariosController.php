@@ -136,7 +136,7 @@ class usuariosController extends Controller
 
            
 
-            'estado' => 'required',
+     
 
 
 
