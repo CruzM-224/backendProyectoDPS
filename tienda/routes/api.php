@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\autenticarClienteController;
 use App\Http\Controllers\categoriasController;
 use App\Http\Controllers\productosController;
 use App\Http\Controllers\usuariosController;
@@ -36,3 +37,5 @@ Route::get('productos/descuento', [productosController::class, 'showOfertas']);
 Route::get('productos/{id}/show', [productosController::class, 'showProductoFront']);
 
 Route::post('ventas/registrar', [ventasController::class, 'ingresarVenta']);
+
+Route::post('tienda/login', [autenticarClienteController::class, 'login']);

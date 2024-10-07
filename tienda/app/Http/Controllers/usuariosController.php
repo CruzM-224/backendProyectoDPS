@@ -132,6 +132,14 @@ class usuariosController extends Controller
             'email' => 'required|email|unique:usuarios',
             'password' => 'required',
             'direccion' => 'required',
+
+
+           
+
+     
+
+
+
         ]);
 
 
