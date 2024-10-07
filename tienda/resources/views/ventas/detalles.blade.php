@@ -57,7 +57,6 @@
                                         <th>Producto</th>
                                         <th>Imagen</th>
                                         <th>Cantidad</th>
-                                        <th>Talla</th>
                                         <th>Monto</th>
                                         <th>No. Venta</th>
                                        
@@ -71,12 +70,8 @@
 
                                            
                                           <td>{{$detalle->producto->producto}}</td>
-                                          <td><img src="{{asset('img/'.$detalle->producto->imagen)}}" alt="" width="100px" height="100px"></td>
+                                          <td><img src="{{$detalle->producto->imagen}}" alt="" width="100px" height="100px"></td>
                                           <td>{{$detalle->cantidad}}</td>
-                                          <td>@isset($detalla->talla)
-                                            {{$detalle->talla->talla}}
-                                              
-                                          @endisset</td>
                                           <td>{{$detalle->monto}}</td>
                                           <td>{{$venta->id}}</td>
                                          

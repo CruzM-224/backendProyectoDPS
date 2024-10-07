@@ -47,17 +47,17 @@ class ventasController extends Controller
             $venta = new venta();
             $venta->id_cliente = $request->id_cliente;
             $venta->monto = $request->monto;
-            $venta->fecha = $request->fecha;
             $venta->id_estado = $request->id_estado;
-            $venta->save;
+            $venta->direccion = $request->direccion;
+            $venta->save();
 
             foreach($request->items as $item){
                 $detalle = new detalle();
-                $producto = producto::find($item->producto);
+                $producto = producto::find($item['producto']);
                 $detalle->id_venta = $venta->id;
-                $detalle->id_producto = $item->producto;
-                $detalle->cantidad = $item->cantidad;
-                $detalle->monto = $item->cantidad * $producto->precio;
+                $detalle->id_producto = $item['producto'];
+                $detalle->cantidad = $item['cantidad'];
+                $detalle->monto = $item['cantidad'] * $producto->precio;
                 $detalle->save();
 
             }

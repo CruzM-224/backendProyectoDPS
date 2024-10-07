@@ -105,7 +105,6 @@ CREATE TABLE `detalles` (
   `id_venta` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `id_talla` int(11) DEFAULT NULL,
   `monto` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -234,79 +233,12 @@ INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `dui`, `email`, `telefono`
 
 CREATE TABLE `ventas` (
   `id` int(11) NOT NULL,
-  `id_metodo_pago` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `monto` decimal(10,2) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
   `direccion` text NOT NULL,
-  `id_estado` int(11) NOT NULL,
-  `comprobante` text DEFAULT NULL
+  `id_estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id`, `id_metodo_pago`, `id_cliente`, `monto`, `fecha`, `direccion`, `id_estado`, `comprobante`) VALUES
-(31, 2, 1, 40.00, '2024-07-16 07:55:09', 'San Salvador', 3, NULL),
-(32, 1, 1, 40.00, '2024-07-16 07:55:59', 'San Salvador', 2, NULL),
-(33, 1, 1, 40.00, '2024-07-16 08:21:59', 'San Salvador', 2, NULL),
-(34, 2, 1, 40.00, '2024-07-16 08:23:00', 'San Salvador', 1, NULL),
-(35, 2, 1, 40.00, '2024-07-22 22:07:14', 'San Salvador', 1, NULL),
-(36, 2, 1, 40.00, '2024-07-22 22:46:23', 'San Salvador', 1, NULL),
-(50, 3, 1, 20.00, '2024-08-06 03:01:48', 'San Salvador', 1, NULL),
-(51, 3, 1, 0.00, '2024-08-06 03:01:56', 'San Salvador', 1, NULL),
-(52, 3, 1, 0.00, '2024-08-06 03:02:00', 'San Salvador', 1, NULL),
-(53, 3, 1, 0.00, '2024-08-06 03:02:04', 'San Salvador', 1, NULL),
-(56, 2, 1, 20.00, '2024-08-07 08:36:48', 'San Salvador', 1, NULL),
-(57, 2, 1, 20.00, '2024-08-07 08:37:17', 'San Salvador', 1, NULL),
-(58, 2, 1, 20.00, '2024-08-07 08:37:40', 'San Salvador', 1, NULL),
-(60, 2, 1, 17.60, '2024-08-08 07:54:30', 'San Salvador', 1, NULL),
-(61, 2, 1, 17.60, '2024-08-08 07:54:36', 'San Salvador', 1, NULL),
-(62, 2, 1, 17.60, '2024-08-08 07:55:36', 'San Salvador', 1, NULL),
-(63, 2, 1, 17.60, '2024-08-08 07:55:36', 'San Salvador', 1, NULL),
-(64, 2, 1, 17.60, '2024-08-08 07:57:31', 'San Salvador', 1, NULL),
-(65, 3, 1, 14.70, '2024-08-29 02:12:03', 'San Salvador', 1, NULL),
-(66, 2, 1, 18.00, '2024-08-29 02:19:12', 'San Salvador', 1, NULL),
-(67, 2, 1, 162.00, '2024-09-02 07:10:43', 'San Salvador', 1, '1725244282_sdasdasd.pdf'),
-(68, 3, 1, 70.00, '2024-09-02 12:44:21', 'San Salvador', 1, NULL),
-(69, 3, 1, 140.00, '2024-09-02 12:49:44', 'San Salvador', 1, NULL),
-(70, 3, 1, 140.00, '2024-09-02 12:54:53', 'San Salvador', 1, NULL),
-(71, 3, 1, 44.10, '2024-09-02 13:05:40', 'San Salvador', 1, NULL),
-(72, 3, 1, 29.40, '2024-09-02 13:06:46', 'San Salvador', 1, NULL),
-(73, 3, 1, 20.00, '2024-09-02 13:08:37', 'San Salvador', 1, NULL),
-(74, 3, 1, 20.00, '2024-09-02 13:09:03', 'San Salvador', 1, NULL),
-(75, 3, 1, 20.00, '2024-09-02 13:09:22', 'San Salvador', 1, NULL),
-(76, 3, 1, 20.00, '2024-09-02 13:09:51', 'San Salvador', 1, NULL),
-(77, 3, 1, 52.80, '2024-09-02 13:10:21', 'San Salvador', 1, NULL),
-(78, 3, 1, 18.00, '2024-09-02 14:14:16', 'San Salvador', 1, NULL),
-(79, 3, 1, 18.00, '2024-09-02 14:17:57', 'San Salvador', 1, NULL),
-(80, 2, 1, 20.00, '2024-09-02 14:19:48', 'San Salvador', 1, NULL),
-(81, 2, 1, 16.40, '2024-09-02 14:19:57', 'San Salvador', 1, NULL),
-(82, 3, 1, 16.40, '2024-09-02 14:21:48', 'San Salvador', 1, NULL),
-(83, 3, 1, 0.00, '2024-09-02 14:22:21', 'San Salvador', 1, NULL),
-(84, 2, 1, 0.00, '2024-09-02 14:25:32', 'San Salvador', 1, NULL),
-(85, 3, 1, 17.60, '2024-09-02 14:25:39', 'San Salvador', 1, NULL),
-(86, 2, 1, 0.00, '2024-09-02 14:25:48', 'San Salvador', 1, NULL),
-(87, 3, 1, 17.60, '2024-09-02 14:26:43', 'San Salvador', 1, NULL),
-(88, 3, 1, 16.40, '2024-09-02 14:30:33', 'San Salvador', 1, NULL),
-(89, 3, 1, 19.40, '2024-09-02 14:33:07', 'San Salvador', 1, NULL),
-(90, 3, 1, 19.40, '2024-09-02 14:36:55', 'San Salvador', 1, NULL),
-(91, 3, 1, 20.00, '2024-09-02 14:43:02', 'San Salvador', 1, NULL),
-(92, 3, 1, 19.40, '2024-09-02 14:46:52', 'San Salvador', 1, '1725377928_sdasdasd.pdf'),
-(93, 2, 1, 0.00, '2024-09-03 21:45:46', 'San Salvador', 1, NULL),
-(94, 2, 1, 0.00, '2024-09-03 21:45:49', 'San Salvador', 1, NULL),
-(95, 2, 1, 0.00, '2024-09-03 21:46:47', 'San Salvador', 1, NULL),
-(96, 2, 1, 0.00, '2024-09-03 21:46:53', 'San Salvador', 1, NULL),
-(97, 2, 1, 0.00, '2024-09-03 21:47:37', 'San Salvador', 1, NULL),
-(98, 2, 1, 0.00, '2024-09-03 21:47:48', 'San Salvador', 1, NULL),
-(99, 2, 1, 0.00, '2024-09-03 21:47:56', 'San Salvador', 1, NULL),
-(100, 2, 1, 0.00, '2024-09-03 21:48:47', 'San Salvador', 1, NULL),
-(101, 2, 1, 0.00, '2024-09-03 21:49:50', 'San Salvador', 1, NULL),
-(102, 2, 1, 0.00, '2024-09-03 21:50:15', 'San Salvador', 1, NULL),
-(103, 2, 1, 0.00, '2024-09-03 21:50:23', 'San Salvador', 1, NULL),
-(104, 2, 1, 18.00, '2024-09-03 21:50:48', 'San Salvador', 1, NULL),
-(105, 2, 1, 18.00, '2024-09-03 21:52:18', 'San Salvador', 1, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -379,7 +311,6 @@ ALTER TABLE `usuarios`
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_id_cliente_v` (`id_cliente`),
-  ADD KEY `fk_id_metodo_pago` (`id_metodo_pago`),
   ADD KEY `fk_id_compra_estado` (`id_estado`);
 
 --
@@ -444,7 +375,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
