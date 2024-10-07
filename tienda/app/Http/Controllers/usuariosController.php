@@ -132,14 +132,6 @@ class usuariosController extends Controller
             'email' => 'required|email|unique:usuarios',
             'password' => 'required',
             'direccion' => 'required',
-
-
-           
-
-            'estado' => 'required',
-
-
-
         ]);
 
 
@@ -158,7 +150,7 @@ class usuariosController extends Controller
             $usuario->id_rol = 2;
 
             $usuario->direccion = $request->direccion;
-            $usuario->estado = $request->estado;
+            $usuario->estado = "Activo";
             $usuario->save();
 
 
